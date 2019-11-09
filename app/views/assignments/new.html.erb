@@ -1,0 +1,14 @@
+<h1>Assignments#new</h1>
+<p>Find me in app/views/assignments/new.html.erb</p>
+
+<%= form_with(model: @assignments, local: true) do |f| %>
+  <%= f.label :person_id %>
+  <%= f.select :person_id, Person.pluck(:name, :id), id: :assignment_id, prompt: "Select Worker" %>
+<br>
+<br>
+  <%= f.label :project_id %>
+  <%= f.select :project_id, Project.pluck(:name, :id), id: :assignment_id, prompt: "Select Project" %>
+<br>
+<br>
+  <%= f.submit 'Add worker' %>
+<%end%>

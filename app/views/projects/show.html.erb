@@ -10,5 +10,13 @@
   <%= @project.detail %>
 </p>
 
+<strong> Asignado a trabajador: </strong>
+<br>
+<% @all_people.each do |person| %>
+  <%= person.name %>
+
+  <br>
+<%end%>
+<br>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

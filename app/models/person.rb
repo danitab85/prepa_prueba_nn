@@ -1,2 +1,4 @@
 class Person < ApplicationRecord
-end
+  has_many :assignments, dependent: :destroy
+  has_many :projects, through: :assignments
+  end
